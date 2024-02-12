@@ -78,16 +78,21 @@ export const UserProfile = () => {
 };
 
 function App() {
-  // const { signIn, url } = useSignIn({
-  //   onSuccess: ({ fid }) => console.log("Your fid:", fid),
-  // });
-  // console.log(url);
   return (
     <AuthKitProvider config={config}>
       <div className="App">
         <header className="App-header">
           <SignInButton />
           <UserProfile />
+          <div className="source-code">
+            <a
+              href="https://github.com/shahbaz17/farcaster-auth-kit"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source Code
+            </a>{" "}
+          </div>
         </header>
       </div>
     </AuthKitProvider>

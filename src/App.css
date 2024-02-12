@@ -48,6 +48,14 @@ a{
   color: #9433e9;
 }
 
+.source-code a{
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(178, 173, 173);
+  text-decoration: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
