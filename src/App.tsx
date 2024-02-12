@@ -1,7 +1,12 @@
 import React from "react";
 import "./App.css";
 import "@farcaster/auth-kit/styles.css";
-import { AuthKitProvider, SignInButton, useProfile } from "@farcaster/auth-kit";
+import {
+  AuthKitProvider,
+  SignInButton,
+  useProfile,
+  useSignInMessage,
+} from "@farcaster/auth-kit";
 
 const config = {
   rpcUrl: "https://mainnet.optimism.io",
@@ -20,6 +25,9 @@ export const UserProfile = () => {
       verifications,
     },
   } = useProfile();
+  const { message, signature } = useSignInMessage();
+  console.log("Message", message);
+  console.log("Signature", signature);
   return (
     <div className="UserProfile">
       {isAuthenticated ? (
@@ -70,6 +78,10 @@ export const UserProfile = () => {
 };
 
 function App() {
+  // const { signIn, url } = useSignIn({
+  //   onSuccess: ({ fid }) => console.log("Your fid:", fid),
+  // });
+  // console.log(url);
   return (
     <AuthKitProvider config={config}>
       <div className="App">
